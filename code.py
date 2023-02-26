@@ -35,6 +35,8 @@ def drawpose(pose, img):
             fill = (255,0,0)
         )
     img.save("results.jpg")
+    resultImage = Image.open("results.jpg")
+    resultImage.show()
 
 if __name__ == '__main__':
     main()
