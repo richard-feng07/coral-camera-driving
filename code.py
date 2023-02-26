@@ -13,7 +13,7 @@ def main():
     interpreter.allocate_tensors()
 
     img = Image.open(imagepath)
-    resizeimg = img.resize(common.inputsize(interpreter),Image.ANTIALIAS)
+    resizeimg = img.resize(common.input_size(interpreter),Image.ANTIALIAS)
 
     common.set_input(interpreter,resizeimg)
 
