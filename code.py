@@ -21,6 +21,7 @@ def main():
 
     pose = common.output_tensor(interpreter,0).copy().reshape(_NUM_KEYPOINTS,3)
     print(pose)
+    drawpose(pose,img)
 
 def drawpose(pose, img):
     draw = ImageDraw.Draw(img)
@@ -34,6 +35,6 @@ def drawpose(pose, img):
             fill = (255,0,0)
         )
     img.save("results.jpg")
-    
+
 if __name__ == '__main__':
     main()
