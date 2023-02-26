@@ -22,6 +22,18 @@ def main():
     pose = common.output_tensor(interpreter,0).copy().reshape(_NUM_KEYPOINTS,3)
     print(pose)
 
-
+def drawpose(pose, img):
+    draw = ImageDraw.Draw(img)
+    width, height = img.size
+    for i in range(0,_NUM_KEYPOINTS):
+        draw.ellipse(
+            xy = [
+                pose[i][1] * width - 2, pose[i][0] * height - 2,
+                pose[i][1] * width + 2, pose[i][0] * height + 2
+            ],
+            fill = (255,0,0)
+        )
+    img.save("results.jpg")
+    
 if __name__ == '__main__':
     main()
