@@ -33,7 +33,7 @@ if __name__ == '__main__':
     if cap is not None :
         cap.release
     print('getting cv2.VideoCapture(0)')
-    cap = cv2.VideoCapture(1)    
+    cap = cv2.VideoCapture()    
     print('got cv2.VideoCapture(0)')
 
     app.run(host='0.0.0.0', port=5000, debug=True)
