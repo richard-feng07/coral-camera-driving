@@ -6,7 +6,7 @@ from flask import Flask, Response
 app = Flask(__name__)
 
 print('getting cv2.VideoCapture(0)')
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 print('got cv2.VideoCapture(0)')
 
 def gen_frames():
